@@ -3,68 +3,43 @@
   "notice": "Fixed local demonstration data. No model or backend is called.",
   "presets": [
     {
-      "id": "creator-workflow",
-      "title": "Idea to Impact",
-      "category": "CREATOR WORKFLOW",
-      "duration": "00:18",
-      "description": "A creator moves from a rough idea to a polished, audience-ready story.",
-      "narration": "A creator turns a rough idea into a polished piece of content, moving from planning to production and finally publishing.",
+      "id": "subway-parkour-run",
+      "title": "Subway Parkour",
+      "category": "ACTION",
+      "description": "A hooded character in a blue vest runs along elevated city train tracks, using ramps to jump onto trains and dodge obstacles.",
+      "narration": "A hooded character in a blue vest runs along elevated city train tracks, using ramps to jump onto trains and dodge obstacles.",
       "video": "assets/videos/preset-1.mp4",
       "card_thumbnail": "assets/presets/preset-1-card.png",
       "captions": {
         "English": {
-          "formal": "A focused creative workflow transforms an initial concept into polished, audience-ready content.",
-          "sarcastic": "Apparently, great content does not create itself. Rude, but this workflow makes it look close.",
-          "humorous_tech": "Idea compiled successfully: planning.exe, creativity.dll, and one dangerously full coffee buffer.",
-          "humorous_non_tech": "One tiny idea walked into a studio and came out dressed for the spotlight."
+          "formal": "A hooded character in a blue vest runs along elevated city train tracks, using ramps to jump onto trains and dodge obstacles.",
+          "sarcastic": "Because nothing says a relaxing jog like sprinting across subway trains and hoping the ramps don't betray you.",
+          "humorous_tech": "The runner is stuck in an infinite loop on the tracks, dodging trains like a process avoiding garbage collection.",
+          "humorous_non_tech": "This guy in a hoodie treats city train tracks like his personal gym, leaping onto trains like it's a normal Tuesday commute."
         },
         "Spanish": {
-          "formal": "Una narrativa cuidada presenta una creadora convirtiendo una idea en impacto con claridad, ritmo y una intención visual coherente.",
-          "sarcastic": "Claro, una creadora convirtiendo una idea en impacto parece totalmente accidental y para nada diseñado para llamar tu atención.",
-          "humorous_tech": "Proceso completado: una creadora convirtiendo una idea en impacto, creatividad al 100 % y cero errores críticos detectados.",
-          "humorous_non_tech": "Todo empezó con una creadora convirtiendo una idea en impacto y terminó robándose el protagonismo sin pedir permiso."
-        },
-        "French": {
-          "formal": "Une narration soignée présente une créatrice transformant une idée en impact avec clarté, rythme et cohérence visuelle.",
-          "sarcastic": "Bien sûr, une créatrice transformant une idée en impact semble totalement spontané et absolument pas conçu pour attirer votre attention.",
-          "humorous_tech": "Processus terminé : une créatrice transformant une idée en impact, créativité à 100 % et aucune erreur critique détectée.",
-          "humorous_non_tech": "Tout a commencé avec une créatrice transformant une idée en impact, puis la vedette a été volée sans même demander la permission."
+          "formal": "Un personaje encapuchado con un chaleco azul corre a lo largo de vías de tren elevadas en la ciudad, usando rampas para saltar sobre los trenes y esquivar obstáculos.",
+          "sarcastic": "Porque nada dice \"jogging relajante\" como correr a toda velocidad sobre trenes del metro y esperar que las rampas no te traicionen.",
+          "humorous_tech": "El corredor está atrapado en un bucle infinito en las vías, esquivando trenes como un proceso evitando la recolección de basura.",
+          "humorous_non_tech": "Este chico de capucha trata las vías del tren de la ciudad como su gimnasio personal, saltando sobre los trenes como si fuera un viaje normal en metro un martes cualquiera."
         },
         "German": {
-          "formal": "Eine sorgfältige Erzählung zeigt eine Kreative, die eine Idee in Wirkung verwandelt mit Klarheit, Tempo und visueller Geschlossenheit.",
-          "sarcastic": "Natürlich wirkt eine Kreative, die eine Idee in Wirkung verwandelt völlig zufällig und wurde ganz bestimmt nicht geplant, um Aufmerksamkeit zu bekommen.",
-          "humorous_tech": "Prozess abgeschlossen: eine Kreative, die eine Idee in Wirkung verwandelt, Kreativität bei 100 % und keine kritischen Fehler gefunden.",
-          "humorous_non_tech": "Alles begann mit eine Kreative, die eine Idee in Wirkung verwandelt und endete damit, ungefragt allen die Show zu stehlen."
+          "formal": "Eine Figur mit Kapuze in einer blauen Weste rennt über erhöhte Stadtbahngleise, nutzt Rampen, um auf Züge zu springen und Hindernissen auszuweichen.",
+          "sarcastic": "Weil nichts \"entspannter Joggen\" sagt, als über U-Bahnen zu sprinten und zu hoffen, dass die Rampen einen nicht verraten.",
+          "humorous_tech": "Der Läufer steckt in einer Endlosschleife auf den Gleisen fest und weicht Zügen aus wie ein Prozess, der der Garbage Collection entgeht.",
+          "humorous_non_tech": "Dieser Typ mit Kapuze behandelt die Stadtbahngleise wie sein persönliches Fitnessstudio und springt auf Züge, als wäre das ein normaler Dienstag-Pendelweg."
         },
         "Japanese": {
-          "formal": "アイデアをインパクトへ変えるクリエイターを、明確な構成とテンポ、統一された映像表現で丁寧に描いています。",
-          "sarcastic": "アイデアをインパクトへ変えるクリエイターが注目を集めるよう計算されているなんて、まさかそんなことはありません。",
-          "humorous_tech": "処理完了：アイデアをインパクトへ変えるクリエイター。創造性100％、重大なエラーは検出されませんでした。",
-          "humorous_non_tech": "アイデアをインパクトへ変えるクリエイターから始まった物語は、いつの間にか主役を全部さらっていきました。"
+          "formal": "青いベストを着たフード姿の人物が、都市の高架鉄道の線路に沿って走り、ランプを使って電車に飛び乗り、障害物を避けています。",
+          "sarcastic": "リラックスできるジョギングと言えば、地下鉄の車両の上を全力疾走して、スロープに裏切られないことを祈るくらいですね。",
+          "humorous_tech": "ランナーは線路上で無限ループに陥っており、ガベージコレクションを避けるプロセスのように電車を避けています。",
+          "humorous_non_tech": "パーカーを着たこの男は、都内の線路を自分の個人的なジムのように扱い、まるで普通の火曜日の通勤のように電車に飛び乗っています。"
         },
-        "Hindi": {
-          "formal": "यह सुव्यवस्थित कहानी एक क्रिएटर जो विचार को प्रभाव में बदल रहा है को स्पष्टता, सही गति और एकरूप दृश्य शैली के साथ प्रस्तुत करती है।",
-          "sarcastic": "बिल्कुल, एक क्रिएटर जो विचार को प्रभाव में बदल रहा है पूरी तरह संयोग है और ध्यान खींचने के लिए बिल्कुल भी तैयार नहीं किया गया।",
-          "humorous_tech": "प्रक्रिया पूरी: एक क्रिएटर जो विचार को प्रभाव में बदल रहा है, रचनात्मकता 100% और कोई गंभीर त्रुटि नहीं मिली।",
-          "humorous_non_tech": "कहानी एक क्रिएटर जो विचार को प्रभाव में बदल रहा है से शुरू हुई और बिना पूछे सारी लाइमलाइट ले गई।"
-        },
-        "Mandarin Chinese": {
-          "formal": "这段精心组织的叙事以清晰的结构、流畅的节奏和统一的视觉语言呈现一位把创意转化为影响力的创作者。",
-          "sarcastic": "当然，一位把创意转化为影响力的创作者完全是偶然发生的，绝对不是为了吸引你的注意力。",
-          "humorous_tech": "处理完成：一位把创意转化为影响力的创作者，创意值100%，未检测到严重错误。",
-          "humorous_non_tech": "故事从一位把创意转化为影响力的创作者开始，然后它毫不客气地抢走了全部镜头。"
-        },
-        "Portuguese": {
-          "formal": "Uma narrativa cuidadosamente estruturada apresenta uma criadora transformando uma ideia em impacto com clareza, ritmo e consistência visual.",
-          "sarcastic": "Claro, uma criadora transformando uma ideia em impacto parece totalmente acidental e nem um pouco planejado para chamar sua atenção.",
-          "humorous_tech": "Processo concluído: uma criadora transformando uma ideia em impacto, criatividade em 100% e nenhum erro crítico detectado.",
-          "humorous_non_tech": "Tudo começou com uma criadora transformando uma ideia em impacto e terminou roubando a cena sem pedir licença."
-        },
-        "Arabic": {
-          "formal": "تقدم هذه السردية المصممة بعناية صانعة محتوى تحول الفكرة إلى أثر بوضوح وإيقاع متوازن وهوية بصرية متماسكة.",
-          "sarcastic": "بالتأكيد، صانعة محتوى تحول الفكرة إلى أثر حدث بالصدفة تماماً ولم يُصمم أبداً لجذب انتباهك.",
-          "humorous_tech": "اكتملت المعالجة: صانعة محتوى تحول الفكرة إلى أثر، الإبداع 100٪ ولم يتم اكتشاف أي أخطاء حرجة.",
-          "humorous_non_tech": "بدأت الحكاية بـصانعة محتوى تحول الفكرة إلى أثر وانتهت وهي تسرق الأضواء من دون استئذان."
+        "Tamil": {
+          "formal": "நீல நிற வெஸ்ட் அணிந்த முகமூடி அணிந்த ஒருவர் நகரத்தின் உயர்த்தப்பட்ட ரயில் பாதைகளில் ஓடுகிறார், ராம்ப்களைப் பயன்படுத்தி ரயில்களில் தாவி தடைகளைத் தவிர்க்கிறார்.",
+          "sarcastic": "ஓய்வான ஜாக்கிங் என்றால் சப்வே ரயில்களின் மீது ஓடிக்கொண்டு, ராம்ப்கள் நம்மை ஏமாற்றாதிருப்பார்கள் என்று நம்புவது போல ஒன்றுமில்லை.",
+          "humorous_tech": "ஓட்டப்பந்தயக்காரர் பாதையில் ஒரு முடிவிலா லூப்பில் சிக்கிக்கொண்டு, குப்பை சேகரிப்பை (garbage collection) தவிர்க்கும் செயல்முறைப் போல ரயில்களைத் தவிர்க்கிறார்.",
+          "humorous_non_tech": "இந்த ஹூடி அணிந்த நபர் நகரத்தின் ரயில் பாதைகளை தனிப்பட்ட ஜிம்மாக நடத்துகிறார், ஒரு சாதாரண செவ்வாய்க்கிழமை பயணம் போல ரயில்களில் தாவுகிறார்."
         }
       },
       "thumbnails": {
@@ -75,68 +50,43 @@
       }
     },
     {
-      "id": "product-reveal",
-      "title": "The Big Reveal",
-      "category": "PRODUCT LAUNCH",
-      "duration": "00:22",
-      "description": "A cinematic launch sequence introduces a new product through detail and drama.",
-      "narration": "A new product is introduced through detail shots, a confident reveal, and a final moment designed to build excitement.",
+      "id": "autumn-city-traffic",
+      "title": "Autumn City Drive",
+      "category": "SCENERY",
+      "description": "Traffic flows along a wide city street lined with yellow autumn trees, with high-rise apartment buildings visible in the background.",
+      "narration": "Traffic flows along a wide city street lined with yellow autumn trees, with high-rise apartment buildings visible in the background.",
       "video": "assets/videos/preset-2.mp4",
       "card_thumbnail": "assets/presets/preset-2-card.png",
       "captions": {
         "English": {
-          "formal": "A carefully staged reveal presents the product’s design, purpose, and value with clarity and confidence.",
-          "sarcastic": "Just a completely casual product reveal with dramatic lighting and absolutely no intention of impressing anyone.",
-          "humorous_tech": "New hardware detected. Excitement drivers installed. Audience attention now running at 100%.",
-          "humorous_non_tech": "It entered the room like it already knew everyone was going to want one."
+          "formal": "Traffic flows along a wide city street lined with yellow autumn trees, with high-rise apartment buildings visible in the background.",
+          "sarcastic": "Ah, autumn in the city—where trees actually try to look nice and cars blur past like they're late for something important.",
+          "humorous_tech": "Autumn deployed a yellow-leaf update across every tree node with zero downtime, while traffic packets keep routing past KOREA ILLIES ENGINEERING.",
+          "humorous_non_tech": "The trees went all-out with their golden autumn wardrobe, and the cars are just rushing past without even complimenting them."
         },
         "Spanish": {
-          "formal": "Una narrativa cuidada presenta la presentación segura de un nuevo producto con claridad, ritmo y una intención visual coherente.",
-          "sarcastic": "Claro, la presentación segura de un nuevo producto parece totalmente accidental y para nada diseñado para llamar tu atención.",
-          "humorous_tech": "Proceso completado: la presentación segura de un nuevo producto, creatividad al 100 % y cero errores críticos detectados.",
-          "humorous_non_tech": "Todo empezó con la presentación segura de un nuevo producto y terminó robándose el protagonismo sin pedir permiso."
-        },
-        "French": {
-          "formal": "Une narration soignée présente le dévoilement assuré d’un nouveau produit avec clarté, rythme et cohérence visuelle.",
-          "sarcastic": "Bien sûr, le dévoilement assuré d’un nouveau produit semble totalement spontané et absolument pas conçu pour attirer votre attention.",
-          "humorous_tech": "Processus terminé : le dévoilement assuré d’un nouveau produit, créativité à 100 % et aucune erreur critique détectée.",
-          "humorous_non_tech": "Tout a commencé avec le dévoilement assuré d’un nouveau produit, puis la vedette a été volée sans même demander la permission."
+          "formal": "El tráfico fluye a lo largo de una amplia calle de la ciudad flanqueada por árboles amarillos de otoño, con edificios de apartamentos de gran altura visibles al fondo.",
+          "sarcastic": "Ah, el otoño en la ciudad—donde los árboles realmente intentan verse bonitos y los coches pasan borrosos como si llegaran tarde a algo importante.",
+          "humorous_tech": "El otoño desplegó una actualización de hojas amarillas en cada nodo de árbol sin tiempo de inactividad, mientras los paquetes de tráfico siguen enrutándose más allá de KOREA ILLIES ENGINEERING.",
+          "humorous_non_tech": "Los árboles se lucieron con su guardarropa dorado de otoño, y los autos solo pasan a toda velocidad sin siquiera darles un cumplido."
         },
         "German": {
-          "formal": "Eine sorgfältige Erzählung zeigt die selbstbewusste Enthüllung eines neuen Produkts mit Klarheit, Tempo und visueller Geschlossenheit.",
-          "sarcastic": "Natürlich wirkt die selbstbewusste Enthüllung eines neuen Produkts völlig zufällig und wurde ganz bestimmt nicht geplant, um Aufmerksamkeit zu bekommen.",
-          "humorous_tech": "Prozess abgeschlossen: die selbstbewusste Enthüllung eines neuen Produkts, Kreativität bei 100 % und keine kritischen Fehler gefunden.",
-          "humorous_non_tech": "Alles begann mit die selbstbewusste Enthüllung eines neuen Produkts und endete damit, ungefragt allen die Show zu stehlen."
+          "formal": "Der Verkehr fließt über eine breite Stadtstraße, die von gelben Herbstbäumen gesäumt ist, während im Hintergrund Hochhaus-Wohngebäude sichtbar sind.",
+          "sarcastic": "Ah, der Herbst in der Stadt – wo die Bäume versuchen, schön auszusehen, und die Autos wie verspätet vorbeibrausen.",
+          "humorous_tech": "Der Herbst hat ein gelbes-Blätter-Update über jeden Baumknoten ohne Ausfallzeit ausgerollt, während Verkehrspakete weiter an KOREA ILLIES ENGINEERING vorbeigeroutet werden.",
+          "humorous_non_tech": "Die Bäume haben ihr goldenes Herbst-Outfit voll ausgepackt, und die Autos rasen einfach vorbei, ohne ihnen ein Kompliment zu machen."
         },
         "Japanese": {
-          "formal": "自信に満ちた新製品発表を、明確な構成とテンポ、統一された映像表現で丁寧に描いています。",
-          "sarcastic": "自信に満ちた新製品発表が注目を集めるよう計算されているなんて、まさかそんなことはありません。",
-          "humorous_tech": "処理完了：自信に満ちた新製品発表。創造性100％、重大なエラーは検出されませんでした。",
-          "humorous_non_tech": "自信に満ちた新製品発表から始まった物語は、いつの間にか主役を全部さらっていきました。"
+          "formal": "背景に高層マンションが見える、黄色い秋の木々が並ぶ広い都市の通りを車が流れています。",
+          "sarcastic": "ああ、街の秋。木々が本当にいい格好をしようとして、車は何か大事なことに遅刻しているかのようにぼやけて過ぎ去っていく場所です。",
+          "humorous_tech": "秋はダウンタイムゼロですべてのツリーノードに黄葉アップデートをデプロイし、トラフィックパケットはKOREA ILLIES ENGINEERINGを通過し続けています。",
+          "humorous_non_tech": "木々は黄金色の秋のファッションを全力で披露しているのに、車は少しも褒め言葉もかけずに急いで通り過ぎていきます。"
         },
-        "Hindi": {
-          "formal": "यह सुव्यवस्थित कहानी एक आत्मविश्वासी नए उत्पाद का अनावरण को स्पष्टता, सही गति और एकरूप दृश्य शैली के साथ प्रस्तुत करती है।",
-          "sarcastic": "बिल्कुल, एक आत्मविश्वासी नए उत्पाद का अनावरण पूरी तरह संयोग है और ध्यान खींचने के लिए बिल्कुल भी तैयार नहीं किया गया।",
-          "humorous_tech": "प्रक्रिया पूरी: एक आत्मविश्वासी नए उत्पाद का अनावरण, रचनात्मकता 100% और कोई गंभीर त्रुटि नहीं मिली।",
-          "humorous_non_tech": "कहानी एक आत्मविश्वासी नए उत्पाद का अनावरण से शुरू हुई और बिना पूछे सारी लाइमलाइट ले गई।"
-        },
-        "Mandarin Chinese": {
-          "formal": "这段精心组织的叙事以清晰的结构、流畅的节奏和统一的视觉语言呈现一次自信满满的新品发布。",
-          "sarcastic": "当然，一次自信满满的新品发布完全是偶然发生的，绝对不是为了吸引你的注意力。",
-          "humorous_tech": "处理完成：一次自信满满的新品发布，创意值100%，未检测到严重错误。",
-          "humorous_non_tech": "故事从一次自信满满的新品发布开始，然后它毫不客气地抢走了全部镜头。"
-        },
-        "Portuguese": {
-          "formal": "Uma narrativa cuidadosamente estruturada apresenta a revelação confiante de um novo produto com clareza, ritmo e consistência visual.",
-          "sarcastic": "Claro, a revelação confiante de um novo produto parece totalmente acidental e nem um pouco planejado para chamar sua atenção.",
-          "humorous_tech": "Processo concluído: a revelação confiante de um novo produto, criatividade em 100% e nenhum erro crítico detectado.",
-          "humorous_non_tech": "Tudo começou com a revelação confiante de um novo produto e terminou roubando a cena sem pedir licença."
-        },
-        "Arabic": {
-          "formal": "تقدم هذه السردية المصممة بعناية إطلاق واثق لمنتج جديد بوضوح وإيقاع متوازن وهوية بصرية متماسكة.",
-          "sarcastic": "بالتأكيد، إطلاق واثق لمنتج جديد حدث بالصدفة تماماً ولم يُصمم أبداً لجذب انتباهك.",
-          "humorous_tech": "اكتملت المعالجة: إطلاق واثق لمنتج جديد، الإبداع 100٪ ولم يتم اكتشاف أي أخطاء حرجة.",
-          "humorous_non_tech": "بدأت الحكاية بـإطلاق واثق لمنتج جديد وانتهت وهي تسرق الأضواء من دون استئذان."
+        "Tamil": {
+          "formal": "பின்னணியில் உயரமான அடுக்குமாடி கட்டிடங்கள் தெரிகிறது, மஞ்சள் நிற இலையுதிர் மரங்கள் வரிசையாக உள்ள அகலமான நகர சாலையில் வாகனங்கள் செல்கின்றன.",
+          "sarcastic": "ஆஹா, நகரத்தில் இலையுதிர் காலம்—இங்கே மரங்கள் உண்மையில் அழகாக தோற்றமளிக்க முயற்சிக்கின்றன, மற்றும் கார்கள் முக்கியமான ஒன்றுக்கு தாமதமாகிவருவது போல வேகமாக கடந்து செல்கின்றன.",
+          "humorous_tech": "இலையுதிர் காலம் பூஜ்ஜிய டவுன்டைமில் ஒவ்வொரு மர நோட்டிலும் மஞ்சள் இலை புதுப்பிப்பை (update) விநியோகித்தது, அதே சமயம் ட்ராபிக் பேக்கேஜ்கள் KOREA ILLIES ENGINEERING வழியாக தொடர்ந்து ரூட் செய்கின்றன.",
+          "humorous_non_tech": "மரங்கள் தங்கள் பொன்னிற இலையுதிர் ஆடையை முழுமையாக அணிந்திருக்க, கார்கள் அவற்றைப் பாராட்டாமல் வெறுமனே வேகமாக செல்கின்றன."
         }
       },
       "thumbnails": {
@@ -147,68 +97,43 @@
       }
     },
     {
-      "id": "travel-story",
-      "title": "Chase the Moment",
-      "category": "TRAVEL STORY",
-      "duration": "00:27",
-      "description": "A fast-moving journey captures open roads, discovery, and unfamiliar places.",
-      "narration": "A fast-moving travel sequence captures open roads, new scenery, and the feeling of discovering something beyond the familiar.",
+      "id": "orange-kitten-path",
+      "title": "Kitten's Forest Stroll",
+      "category": "ANIMALS",
+      "description": "An orange kitten walks toward the camera along a dirt path beneath green bushes and trees, with sunlight filtering through the foliage.",
+      "narration": "An orange kitten walks toward the camera along a dirt path beneath green bushes and trees, with sunlight filtering through the foliage.",
       "video": "assets/videos/preset-3.mp4",
       "card_thumbnail": "assets/presets/preset-3-card.png",
       "captions": {
         "English": {
-          "formal": "A dynamic travel story captures movement, discovery, and the emotional value of exploring unfamiliar places.",
-          "sarcastic": "Yes, the view is incredible. No, your inbox did not become more interesting while you were away.",
-          "humorous_tech": "Location services enabled. Routine disabled. Adventure successfully deployed to production.",
-          "humorous_non_tech": "The road said “come along,” and honestly, it would have been awkward to say no."
+          "formal": "An orange kitten walks toward the camera along a dirt path beneath green bushes and trees, with sunlight filtering through the foliage.",
+          "sarcastic": "An orange kitten struts down a dirt path toward the camera, because clearly the whole forest has been waiting for its grand arrival.",
+          "humorous_tech": "A small orange agent has booted up and is traversing the garden path toward the user, presumably to request additional permissions before deploying the zoomies module.",
+          "humorous_non_tech": "A tiny orange kitten marches down the dirt path like it pays rent around here, heading straight for the camera to inspect your credentials."
         },
         "Spanish": {
-          "formal": "Una narrativa cuidada presenta un viaje lleno de energía por lugares nuevos con claridad, ritmo y una intención visual coherente.",
-          "sarcastic": "Claro, un viaje lleno de energía por lugares nuevos parece totalmente accidental y para nada diseñado para llamar tu atención.",
-          "humorous_tech": "Proceso completado: un viaje lleno de energía por lugares nuevos, creatividad al 100 % y cero errores críticos detectados.",
-          "humorous_non_tech": "Todo empezó con un viaje lleno de energía por lugares nuevos y terminó robándose el protagonismo sin pedir permiso."
-        },
-        "French": {
-          "formal": "Une narration soignée présente un voyage dynamique à travers de nouveaux horizons avec clarté, rythme et cohérence visuelle.",
-          "sarcastic": "Bien sûr, un voyage dynamique à travers de nouveaux horizons semble totalement spontané et absolument pas conçu pour attirer votre attention.",
-          "humorous_tech": "Processus terminé : un voyage dynamique à travers de nouveaux horizons, créativité à 100 % et aucune erreur critique détectée.",
-          "humorous_non_tech": "Tout a commencé avec un voyage dynamique à travers de nouveaux horizons, puis la vedette a été volée sans même demander la permission."
+          "formal": "Un gatito naranja camina hacia la cámara por un camino de tierra debajo de arbustos y árboles verdes, con la luz del sol filtrándose entre el follaje.",
+          "sarcastic": "Un gatito naranja camina con estilo por un camino de tierra hacia la cámara, porque claramente todo el bosque ha estado esperando su gran llegada.",
+          "humorous_tech": "Un pequeño agente naranja se ha iniciado y está recorriendo el camino del jardín hacia el usuario, presumiblemente para solicitar permisos adicionales antes de implementar el módulo de locuras.",
+          "humorous_non_tech": "Un pequeño gatito naranja marcha por el camino de tierra como si pagara alquiler aquí, yendo directo a la cámara para inspeccionar tus credenciales."
         },
         "German": {
-          "formal": "Eine sorgfältige Erzählung zeigt eine energiegeladene Reise durch neue Orte mit Klarheit, Tempo und visueller Geschlossenheit.",
-          "sarcastic": "Natürlich wirkt eine energiegeladene Reise durch neue Orte völlig zufällig und wurde ganz bestimmt nicht geplant, um Aufmerksamkeit zu bekommen.",
-          "humorous_tech": "Prozess abgeschlossen: eine energiegeladene Reise durch neue Orte, Kreativität bei 100 % und keine kritischen Fehler gefunden.",
-          "humorous_non_tech": "Alles begann mit eine energiegeladene Reise durch neue Orte und endete damit, ungefragt allen die Show zu stehlen."
+          "formal": "Ein orangefarbenes Kätzchen läuft auf einem Sandweg zwischen grünen Büschen und Bäumen auf die Kamera zu, während das Sonnenlicht durch das Blattwerk fällt.",
+          "sarcastic": "Ein orangefarbenes Kätzchen stolziert einen Sandweg hinunter auf die Kamera zu, weil der ganze Wald offensichtlich auf seine große Ankunft gewartet hat.",
+          "humorous_tech": "Ein kleiner oranger Agent hat gebootet und traversiert den Gartenweg in Richtung Benutzer, vermutlich um vor dem Deployment des Zoomies-Moduls zusätzliche Berechtigungen anzufordern.",
+          "humorous_non_tech": "Ein winziges orangefarbenes Kätzchen marschiert den Sandweg hinunter, als würde es hier Miete zahlen, und geht direkt auf die Kamera zu, um deine Credentials zu prüfen."
         },
         "Japanese": {
-          "formal": "新しい場所を巡るエネルギッシュな旅を、明確な構成とテンポ、統一された映像表現で丁寧に描いています。",
-          "sarcastic": "新しい場所を巡るエネルギッシュな旅が注目を集めるよう計算されているなんて、まさかそんなことはありません。",
-          "humorous_tech": "処理完了：新しい場所を巡るエネルギッシュな旅。創造性100％、重大なエラーは検出されませんでした。",
-          "humorous_non_tech": "新しい場所を巡るエネルギッシュな旅から始まった物語は、いつの間にか主役を全部さらっていきました。"
+          "formal": "緑の茂みや木々の下の土の道を、オレンジ色の子猫がカメラに向かって歩いており、木漏れ日が差し込んでいます。",
+          "sarcastic": "オレンジ色の子猫が土の道をカメラに向かって堂々と歩いてきます。森全体が明らかにその壮大な登場を待っていたからに違いありません。",
+          "humorous_tech": "小さなオレンジ色のエージェントがブートアップし、ガーデンパスをユーザーに向かって移動しています。おそらく「ズーミーズ（急に暴れ回る）」モジュールをデプロイする前に、追加の権限をリクエストするためでしょう。",
+          "humorous_non_tech": "ここで家賃を払っているかのように、小さなオレンジ色の子猫が土の道を行進し、あなたの資格を審査するためにまっすぐカメラに向かってきます。"
         },
-        "Hindi": {
-          "formal": "यह सुव्यवस्थित कहानी नई जगहों की एक ऊर्जावान यात्रा को स्पष्टता, सही गति और एकरूप दृश्य शैली के साथ प्रस्तुत करती है।",
-          "sarcastic": "बिल्कुल, नई जगहों की एक ऊर्जावान यात्रा पूरी तरह संयोग है और ध्यान खींचने के लिए बिल्कुल भी तैयार नहीं किया गया।",
-          "humorous_tech": "प्रक्रिया पूरी: नई जगहों की एक ऊर्जावान यात्रा, रचनात्मकता 100% और कोई गंभीर त्रुटि नहीं मिली।",
-          "humorous_non_tech": "कहानी नई जगहों की एक ऊर्जावान यात्रा से शुरू हुई और बिना पूछे सारी लाइमलाइट ले गई।"
-        },
-        "Mandarin Chinese": {
-          "formal": "这段精心组织的叙事以清晰的结构、流畅的节奏和统一的视觉语言呈现一段穿越新天地的活力旅程。",
-          "sarcastic": "当然，一段穿越新天地的活力旅程完全是偶然发生的，绝对不是为了吸引你的注意力。",
-          "humorous_tech": "处理完成：一段穿越新天地的活力旅程，创意值100%，未检测到严重错误。",
-          "humorous_non_tech": "故事从一段穿越新天地的活力旅程开始，然后它毫不客气地抢走了全部镜头。"
-        },
-        "Portuguese": {
-          "formal": "Uma narrativa cuidadosamente estruturada apresenta uma jornada vibrante por novos lugares com clareza, ritmo e consistência visual.",
-          "sarcastic": "Claro, uma jornada vibrante por novos lugares parece totalmente acidental e nem um pouco planejado para chamar sua atenção.",
-          "humorous_tech": "Processo concluído: uma jornada vibrante por novos lugares, criatividade em 100% e nenhum erro crítico detectado.",
-          "humorous_non_tech": "Tudo começou com uma jornada vibrante por novos lugares e terminou roubando a cena sem pedir licença."
-        },
-        "Arabic": {
-          "formal": "تقدم هذه السردية المصممة بعناية رحلة نابضة بالحياة عبر أماكن جديدة بوضوح وإيقاع متوازن وهوية بصرية متماسكة.",
-          "sarcastic": "بالتأكيد، رحلة نابضة بالحياة عبر أماكن جديدة حدث بالصدفة تماماً ولم يُصمم أبداً لجذب انتباهك.",
-          "humorous_tech": "اكتملت المعالجة: رحلة نابضة بالحياة عبر أماكن جديدة، الإبداع 100٪ ولم يتم اكتشاف أي أخطاء حرجة.",
-          "humorous_non_tech": "بدأت الحكاية بـرحلة نابضة بالحياة عبر أماكن جديدة وانتهت وهي تسرق الأضواء من دون استئذان."
+        "Tamil": {
+          "formal": "பச்சை புதர்கள் மற்றும் மரங்களுக்கு கீழே ஒரு மண் பாதையில் மஞ்சள் நிற பூனைக்குட்டி கேமரா நோக்கி நடக்கிறது, இலைகளின் வழியாக சூரிய ஒளி படருகிறது.",
+          "sarcastic": "ஒரு மஞ்சள் நிற பூனைக்குட்டி கேமரா நோக்கி ஒரு மண் பாதையில் தன்னம்பிக்கையுடன் நடக்கிறது, ஏனெனில் தெளிவாகவே முழு காடும் அதன் பெரிய வருகைக்காக காத்திருந்தது.",
+          "humorous_tech": "ஒரு சிறிய மஞ்சள் நிற ஏஜென்ட் பூட் ஆகிவிட்டது மற்றும் பயனரை நோக்கி தோட்டப் பாதையில் பயணிக்கிறது, ஒருவேளை 'zoomies' மாட்யூலை டிப்ளாய் செய்வதற்கு முன் கூடுதல் அனுமதிகளைக் கோருவதற்காக இருக்கலாம்.",
+          "humorous_non_tech": "இங்கே வாடகை செலுத்துவது போல ஒரு சிறிய மஞ்சள் நிற பூனைக்குட்டி மண் பாதையில் அணிவகுத்து செல்கிறது, உங்கள் சான்றுகளைச் சரிபார்க்க நேரடியாக கேமராவிற்கு செல்கிறது."
         }
       },
       "thumbnails": {

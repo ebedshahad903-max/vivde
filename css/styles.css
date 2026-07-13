@@ -910,7 +910,7 @@ body > .vivid-background { position: fixed; inset: 0; z-index: 0; overflow: hidd
 .gemma-toggle[aria-pressed="true"] .gemma-switch i { transform: translateX(.83rem); background: #3b82f6; box-shadow: 0 0 12px #60a5fa; }
 .gemma-toggle-nav { max-width: 15rem; }
 
-.vivid-hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2rem, 6vw, 6rem); align-items: center; }
+.vivid-hero-grid { display: grid; grid-template-columns: .9fr 1.2fr; gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }
 .vivid-hero-copy { position: relative; z-index: 2; }
 .vivid-kicker { display: inline-flex; align-items: center; gap: .5rem; padding: .42rem .72rem; border-radius: 999px; border: 1px solid rgba(34,211,238,.25); background: rgba(34,211,238,.08); color: #67e8f9; font: 850 .62rem/1 ui-monospace, monospace; letter-spacing: .11em; }
 .vivid-hero-copy h1 { margin: 1.2rem 0 0; color: #fff; font-size: clamp(4rem, 9vw, 8.5rem); letter-spacing: -.075em; line-height: .82; font-weight: 950; }
@@ -939,6 +939,28 @@ body > .vivid-background { position: fixed; inset: 0; z-index: 0; overflow: hidd
 @keyframes vivid-core-float { 50% { transform: translateY(-9px) scale(1.025); } }
 @keyframes vivid-orbit { to { transform: rotate(360deg); } }
 @keyframes vivid-float-card { to { transform: translateY(-10px) rotate(.6deg); } }
+
+.diy-shell-toggle { position: relative; display: inline-flex; align-items: center; padding: .3rem; border-radius: .9rem; border: 1px solid rgba(51,65,85,.65); background: rgba(2,6,23,.85); }
+.diy-shell-thumb { position: absolute; top: .3rem; left: 0; bottom: .3rem; border-radius: .65rem; background: linear-gradient(135deg, rgba(34,211,238,.24), rgba(34,211,238,.09)); border: 1px solid rgba(34,211,238,.45); box-shadow: 0 0 16px rgba(34,211,238,.2); transition: transform .3s cubic-bezier(.2,.8,.2,1), width .3s cubic-bezier(.2,.8,.2,1); }
+.diy-shell-toggle[data-active="cmd"] .diy-shell-thumb { background: linear-gradient(135deg, rgba(232,121,249,.24), rgba(232,121,249,.09)); border-color: rgba(232,121,249,.45); box-shadow: 0 0 16px rgba(232,121,249,.2); }
+.diy-shell-tab { position: relative; z-index: 1; padding: .6rem 1.1rem; border: 0; border-radius: .65rem; background: transparent; color: #64748b; font: 800 .68rem/1 ui-monospace, monospace; letter-spacing: .03em; white-space: nowrap; cursor: pointer; transition: color .25s; }
+.diy-shell-tab:hover { color: #cbd5e1; }
+.diy-shell-toggle[data-active="ps"] .diy-shell-tab[data-shell="ps"],
+.diy-shell-toggle[data-active="cmd"] .diy-shell-tab[data-shell="cmd"] { color: #fff; }
+
+.diy-requirements { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 3rem; }
+.diy-requirements span { display: inline-flex; align-items: center; gap: .5rem; padding: .5rem .9rem; border-radius: 999px; border: 1px solid rgba(148,163,184,.18); background: rgba(2,6,23,.6); color: #cbd5e1; font: 750 .64rem/1 ui-monospace, monospace; letter-spacing: .04em; }
+.diy-requirements span::before { content: "✦"; color: #67e8f9; font-size: .6rem; }
+
+.diy-steps-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+@media (min-width: 768px) { .diy-steps-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .diy-steps-grid { grid-template-columns: repeat(3, 1fr); } }
+.diy-step-wide { grid-column: span 1; }
+@media (min-width: 768px) { .diy-step-wide { grid-column: span 2; } }
+
+.vivid-hero-video-col { position: relative; z-index: 2; width: 100%; }
+.vivid-hero-video { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 1.75rem; overflow: hidden; border: 1px solid rgba(103,232,249,.25); background: #000; box-shadow: 0 30px 90px rgba(2,6,23,.55), 0 0 70px rgba(34,211,238,.1); }
+.vivid-hero-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
 .vivid-workspace { position: relative; padding: 1.5rem; border-radius: 2rem; border: 1px solid rgba(51,65,85,.72); background: rgba(2,6,23,.7); backdrop-filter: blur(16px); box-shadow: 0 28px 80px rgba(0,0,0,.25); overflow: visible; }
 .vivid-workspace-header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(51,65,85,.45); }
@@ -1373,6 +1395,7 @@ body.light-mode .vivid-hero-core {
 body.light-mode .vivid-hero-core strong { color: #fff !important; text-shadow: 0 2px 14px rgba(76,29,149,.34); }
 body.light-mode .vivid-hero-core small { color: #f5f3ff !important; }
 body.light-mode .vivid-hero-orbit { border-color: rgba(124,58,237,.18) !important; }
+body.light-mode .vivid-hero-video { border-color: rgba(124,58,237,.28) !important; box-shadow: 0 28px 80px rgba(91,33,182,.18) !important; }
 body.light-mode .vivid-floating-card {
   background: linear-gradient(145deg, rgba(255,255,255,.94), rgba(245,243,255,.92)) !important;
   border-color: rgba(124,58,237,.22) !important;
@@ -1380,6 +1403,25 @@ body.light-mode .vivid-floating-card {
 }
 body.light-mode .vivid-floating-card small { color: #8b5cf6 !important; }
 body.light-mode .vivid-floating-card strong { color: #3b0764 !important; }
+body.light-mode .diy-requirements span {
+  color: #334155 !important;
+  border-color: rgba(15,23,42,.14) !important;
+  background: rgba(255,255,255,.85) !important;
+}
+body.light-mode .diy-requirements span::before { color: #0369a1; }
+body.light-mode .diy-shell-toggle { background: rgba(255,255,255,.75) !important; border-color: rgba(15,23,42,.14) !important; }
+body.light-mode .diy-shell-tab { color: #64748b !important; }
+body.light-mode .diy-shell-toggle[data-active="ps"] .diy-shell-tab[data-shell="ps"],
+body.light-mode .diy-shell-toggle[data-active="cmd"] .diy-shell-tab[data-shell="cmd"] { color: #0f172a !important; }
+body.light-mode .diy-shell-thumb {
+  background: linear-gradient(135deg, rgba(14,165,233,.18), rgba(14,165,233,.08)) !important;
+  border-color: rgba(2,132,199,.4) !important;
+  box-shadow: 0 0 14px rgba(14,165,233,.18) !important;
+}
+body.light-mode .diy-shell-toggle[data-active="cmd"] .diy-shell-thumb {
+  background: linear-gradient(135deg, rgba(192,38,211,.16), rgba(192,38,211,.08)) !important;
+  border-color: rgba(192,38,211,.4) !important;
+}
 body.light-mode .neon-gradient-btn {
   background: linear-gradient(110deg, #6d28d9, #8b5cf6 48%, #d946ef) !important;
   box-shadow: 0 12px 30px rgba(124,58,237,.28) !important;
