@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="First-Time User Guide — Run Vivid Studio on your Windows PC with Docker and Python." name="description"/>
+    <title>First-Time User Guide — Vivid Studio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #04020a;
+            --card-bg: linear-gradient(145deg, rgba(20, 15, 54, 0.65) 0%, rgba(10, 7, 30, 0.75) 100%);
+            --card-border: rgba(99, 102, 241, 0.15);
+            --card-border-hover: rgba(6, 182, 212, 0.4);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent-blue: #3b82f6;
+            --accent-cyan: #06b6d4;
+            --accent-green: #10b981;
+            --accent-purple: #8b5cf6;
+            --font-sans: 'Outfit', 'Inter', sans-serif;
+            --font-mono: 'Fira Code', monospace;
+        }
+
+        *, :after, :before {
+            box-sizing: border-box;
+            border: 0 solid #1e293b;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image:
+                radial-gradient(circle at 80% 20%, rgba(112, 0, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 10% 50%, rgba(0, 242, 254, 0.10) 0%, transparent 40%),
+                radial-gradient(circle at 50% 80%, rgba(217, 70, 239, 0.10) 0%, transparent 50%);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            line-height: 1.625;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            padding-bottom: 5rem;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Navbar */
+        .guide-navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 50;
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            background: rgba(4, 2, 10, 0.6);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .guide-navbar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .guide-nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 900;
+            letter-spacing: 0.05em;
+            color: #fff;
+        }
+
+        .guide-brand-icon {
+            color: var(--accent-cyan);
+            display: flex;
+            align-items: center;
+        }
+
+        .guide-brand-icon svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+        }
+
+        .guide-nav-brand span {
+            font-size: 1.125rem;
+            background: linear-gradient(to right, #fff, var(--text-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            background: rgba(255, 255, 255, 0.03);
+            transition: all 0.2s ease;
+        }
+
+        .back-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateX(-2px);
+        }
+
+        /* Hero */
+        .guide-hero {
+            padding-top: 8rem;
+            padding-bottom: 3rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        .guide-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent-cyan);
+            margin-bottom: 1rem;
+            background: rgba(6, 182, 212, 0.1);
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(6, 182, 212, 0.2);
+        }
+
+        .guide-hero h1 {
+            font-size: 2.75rem;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+            color: #fff;
+            background: linear-gradient(135deg, #fff 40%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @media (min-width: 768px) {
+            .guide-hero h1 {
+                font-size: 3.5rem;
+            }
+        }
+
+        .guide-hero p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Shell Switcher Controls */
+        .terminal-selector-wrap {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .terminal-selector-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .terminal-switcher {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 9999px;
+            padding: 0.25rem;
+            display: flex;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .terminal-btn {
+            font-family: var(--font-sans);
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            padding: 0.5rem 1.25rem;
+            border-radius: 9999px;
+            cursor: pointer;
+            background: transparent;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .terminal-btn.active {
+            color: #fff;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%);
+            box-shadow: 0 2px 10px rgba(6, 182, 212, 0.25);
+        }
+
+        /* Layout Grid */
+        .guide-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .guide-layout {
+                display: grid;
+                grid-template-columns: 280px 1fr;
+                gap: 3.5rem;
+                align-items: start;
+            }
+        }
+
+        /* Sidebar navigation */
+        .guide-sidebar {
+            position: sticky;
+            top: 7rem;
+            display: none;
+        }
+
+        @media (min-width: 1024px) {
+            .guide-sidebar {
+                display: block;
+            }
+        }
+
+        .sidebar-nav-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            padding-left: 0.75rem;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .sidebar-link {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease;
+            border-left: 2px solid transparent;
+        }
+
+        .sidebar-link:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.03);
+            padding-left: 1rem;
+        }
+
+        .sidebar-link.active {
+            color: var(--accent-cyan);
+            font-weight: 600;
+            background: rgba(6, 182, 212, 0.05);
+            border-left-color: var(--accent-cyan);
+            padding-left: 1rem;
+        }
+
+        /* Content Area */
+        .guide-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        /* Cards Style */
+        .guide-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 1.25rem;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .guide-card:hover {
+            border-color: var(--card-border-hover);
+            box-shadow: 0 12px 40px rgba(6, 182, 212, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .guide-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.25rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .guide-card-title-group {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .step-badge {
+            background: linear-gradient(135deg, var(--accent-purple) 0%, rgba(217, 70, 239, 0.7) 100%);
+            color: #fff;
+            width: 2.25rem;
+            height: 2.25rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.95rem;
+            box-shadow: 0 2px 10px rgba(139, 92, 246, 0.3);
+            flex-shrink: 0;
+        }
+
+        .guide-card h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: -0.01em;
+        }
+
+        .guide-card p {
+            color: var(--text-secondary);
+            font-size: 0.975rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.6;
+        }
+
+        /* Prerequisites Grid */
+        .prereq-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .prereq-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .prereq-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 0.85rem;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .prereq-item:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .prereq-info {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .prereq-icon {
+            color: var(--accent-cyan);
+            margin-top: 0.15rem;
+            flex-shrink: 0;
+        }
+
+        .prereq-icon svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .prereq-details strong {
+            display: block;
+            font-size: 0.95rem;
+            color: #fff;
+            margin-bottom: 0.15rem;
+        }
+
+        .prereq-details span {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .prereq-link {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            align-self: flex-start;
+            padding: 0.35rem 0.75rem;
+            background: rgba(6, 182, 212, 0.06);
+            border-radius: 0.5rem;
+            border: 1px solid rgba(6, 182, 212, 0.15);
+            transition: all 0.2s ease;
+        }
+
+        .prereq-link:hover {
+            background: var(--accent-cyan);
+            color: #04020a;
+            box-shadow: 0 0 10px rgba(6, 182, 212, 0.3);
+        }
+
+        /* Important Callout */
+        .callout-box {
+            display: flex;
+            gap: 1rem;
+            background: rgba(245, 158, 11, 0.05);
+            border: 1px solid rgba(245, 158, 11, 0.25);
+            border-radius: 0.75rem;
+            padding: 1.25rem;
+            margin-top: 1.25rem;
+        }
+
+        .callout-icon {
+            color: var(--accent-purple);
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        .callout-icon svg {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+
+        .callout-text strong {
+            display: block;
+            color: #fff;
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .callout-text p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .callout-box.info {
+            background: rgba(16, 185, 129, 0.04);
+            border-color: rgba(16, 185, 129, 0.2);
+        }
+        
+        .callout-box.info .callout-icon {
+            color: var(--accent-green);
+        }
+
+        /* Terminal Window */
+        .terminal-window {
+            background: #060413;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6);
+            margin-top: 1.25rem;
+        }
+
+        .terminal-header {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 0.75rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .terminal-dots {
+            display: flex;
+            gap: 0.35rem;
+        }
+
+        .terminal-dot {
+            width: 0.65rem;
+            height: 0.65rem;
+            border-radius: 50%;
+        }
+
+        .terminal-dot.red { background-color: #ef4444; }
+        .terminal-dot.yellow { background-color: #f59e0b; }
+        .terminal-dot.green { background-color: #10b981; }
+
+        .terminal-title {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        .terminal-body {
+            position: relative;
+            padding: 1.25rem;
+        }
+
+        .terminal-code {
+            font-family: var(--font-mono);
+            font-size: 0.875rem;
+            color: #38bdf8;
+            overflow-x: auto;
+            white-space: pre;
+            padding-right: 2.5rem;
+        }
+
+        .terminal-code code {
+            display: block;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 0.85rem;
+            right: 0.85rem;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            width: 2rem;
+            height: 2rem;
+            border-radius: 0.375rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .copy-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .copy-btn svg {
+            width: 1rem;
+            height: 1rem;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+        }
+
+        .copy-btn.copied {
+            color: var(--accent-green);
+            background: rgba(16, 185, 129, 0.08);
+            border-color: rgba(16, 185, 129, 0.3);
+            width: auto;
+            padding: 0 0.5rem;
+            font-size: 0.75rem;
+            font-family: var(--font-sans);
+            font-weight: 600;
+            gap: 0.25rem;
+        }
+
+        /* Buttons & Callout Controls */
+        .card-actions {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .primary-action-btn {
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%);
+            color: #04020a;
+            font-family: var(--font-sans);
+            font-size: 0.875rem;
+            font-weight: 700;
+            padding: 0.6rem 1.25rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 15px rgba(6, 182, 212, 0.25);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .primary-action-btn:hover {
+            box-shadow: 0 6px 20px rgba(6, 182, 212, 0.45);
+            transform: translateY(-1px);
+        }
+
+        .secondary-action-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--text-secondary);
+            font-family: var(--font-sans);
+            font-size: 0.875rem;
+            font-weight: 600;
+            padding: 0.6rem 1.25rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .secondary-action-btn:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        /* Switchable Shell System */
+        body.use-powershell .cmd-block {
+            display: none !important;
+        }
+
+        body.use-cmd .powershell-block {
+            display: none !important;
+        }
+
+        /* Mock JSON Output Modal/Drawer */
+        .output-mock {
+            background: #060413;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 0.75rem;
+            padding: 1.25rem;
+            margin-top: 1.25rem;
+            display: none;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .output-mock.show {
+            display: block;
+        }
+
+        .output-mock-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 0.5rem;
+        }
+
+        .output-mock-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            font-family: var(--font-mono);
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .output-mock-code {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: #a7f3d0;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            line-height: 1.5;
+        }
+
+        /* Quick Navigation Float */
+        .bottom-nav-nav {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            z-index: 40;
+            transition: all 0.2s ease;
+            color: var(--text-secondary);
+        }
+
+        .bottom-nav-nav:hover {
+            background: var(--accent-cyan);
+            color: #04020a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(6, 182, 212, 0.4);
+        }
+
+        /* Footer */
+        .guide-footer {
+            margin-top: 6rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+        }
+
+        /* Summary Step card styling */
+        .summary-card {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.05) 0%, rgba(16, 185, 129, 0.05) 100%);
+            border: 1px dashed rgba(6, 182, 212, 0.3);
+        }
+
+        .summary-step-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .summary-step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .summary-step-number {
+            background: rgba(6, 182, 212, 0.15);
+            color: var(--accent-cyan);
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        .summary-step-text {
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body class="use-powershell">
+
+    <!-- Navbar -->
+    <nav class="guide-navbar" aria-label="Secondary navigation">
+        <div class="guide-navbar-inner">
+            <a href="index.html" class="guide-nav-brand">
+                <span class="guide-brand-icon">
+                    <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"></rect><rect x="9" y="9" width="6" height="6" rx="1"></rect><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"></path></svg>
+                </span>
+                <span>VIVID STUDIO</span>
+            </a>
+            <a href="index.html" class="back-btn">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                <span>Back to Demo</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="guide-hero">
+        <div class="guide-kicker">✦ Windows Environment Guide</div>
+        <h1>First-Time User Guide</h1>
+        <p>A step-by-step documentation for running and validating the Vivid Studio captioning system on your local Windows PC.</p>
+        
+        <!-- PowerShell vs CMD Toggle Switcher -->
+        <div class="terminal-selector-wrap">
+            <span class="terminal-selector-label">Preferred Shell:</span>
+            <div class="terminal-switcher" role="tablist">
+                <button id="btn-toggle-powershell" class="terminal-btn active" role="tab" aria-selected="true" type="button">PowerShell</button>
+                <button id="btn-toggle-cmd" class="terminal-btn" role="tab" aria-selected="false" type="button">Command Prompt (CMD)</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Grid Container -->
+    <main class="guide-container">
+        <div class="guide-layout">
+            
+            <!-- Floating Sidebar Navigation -->
+            <aside class="guide-sidebar">
+                <nav class="sidebar-nav" aria-label="Step navigation">
+                    <div class="sidebar-nav-title">Steps Map</div>
+                    <ul class="sidebar-menu">
+                        <li><a href="#prerequisites" class="sidebar-link active">Prerequisites</a></li>
+                        <li><a href="#step-1" class="sidebar-link">1. Choose Terminal</a></li>
+                        <li><a href="#step-2" class="sidebar-link">2. Clone Project</a></li>
+                        <li><a href="#step-3" class="sidebar-link">3. Go to Folder</a></li>
+                        <li><a href="#step-4" class="sidebar-link">4. Create Folders</a></li>
+                        <li><a href="#step-5" class="sidebar-link">5. Copy Sample File</a></li>
+                        <li><a href="#step-6" class="sidebar-link">6. Build Docker</a></li>
+                        <li><a href="#step-7" class="sidebar-link">7. Run the System</a></li>
+                        <li><a href="#step-8" class="sidebar-link">8. View Output</a></li>
+                        <li><a href="#step-9" class="sidebar-link">9. Run Frontend</a></li>
+                        <li><a href="#summary" class="sidebar-link">Simple Summary</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Steps Content -->
+            <div class="guide-content">
+                
+                <!-- Prerequisites Card -->
+                <section id="prerequisites" class="guide-card">
+                    <div class="guide-card-header">
+                        <div class="guide-card-title-group">
+                            <span class="step-badge" style="background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%);">✓</span>
+                            <h2>System Prerequisites</h2>
+                        </div>
+                    </div>
+                    <p>Make sure your Windows PC has these software dependencies installed before executing the setup steps.</p>
+                    
+                    <div class="prereq-grid">
+                        <article class="prereq-item">
+                            <div class="prereq-info">
+                                <div class="prereq-icon">
+                                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+                                </div>
+                                <div class="prereq-details">
+                                    <strong>Windows OS</strong>
+                                    <span>Windows 10 or 11</span>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <article class="prereq-item">
+                            <div class="prereq-info">
+                                <div class="prereq-icon">
+                                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                                </div>
+                                <div class="prereq-details">
+                                    <strong>Git CLI</strong>
+                                    <span>Version 2.40 or newer</span>
+                                </div>
+                            </div>
+                            <a href="https://git-scm.com/download/win" target="_blank" rel="noreferrer" class="prereq-link">Download Git →</a>
+                        </article>
+                        
+                        <article class="prereq-item">
+                            <div class="prereq-info">
+                                <div class="prereq-icon">
+                                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                                </div>
+                                <div class="prereq-details">
+                                    <strong>Docker Desktop</strong>
+                                    <span>Latest stable release</span>
+                                </div>
+                            </div>
+                            <a href="https://www.docker.com/products/docker-desktop/" target="_blank" rel="noreferrer" class="prereq-link">Download Docker →</a>
+                        </article>
+
+                        <article class="prereq-item">
+                            <div class="prereq-info">
+                                <div class="prereq-icon">
+                                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="6 2 18 2 18 6 6 6 6 2"></polygon><rect x="3" y="6" width="18" height="16" rx="2"></rect></svg>
+                                </div>
+                                <div class="prereq-details">
+                                    <strong>Python Environment</strong>
+                                    <span>Version 3.10 or 3.11</span>
+                                </div>
+                            </div>
+                            <a href="https://www.python.org/downloads/windows/" target="_blank" rel="noreferrer" class="prereq-link">Download Python →</a>
+                        </article>
+                    </div>
+
+                    <div class="callout-box">
+                        <span class="callout-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                        </span>
+                        <div class="callout-text">
+                            <strong>Service Status Verification Required</strong>
+                            <p>Docker Desktop must be running locally in your Windows taskbar before deploying or executing any container actions.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Step 1 -->
+                <section id="step-1" class="guide-card">
+                    <div class="guide-card-header">
+                        <div class="guide-card-title-group">
+                            <span class="step-badge">1</span>
+                            <h2>Choose Terminal</h2>
+                        </div>
+                    </div>
+                    <p>For Windows, the highly recommended terminal is PowerShell. Alternatively, Command Prompt (CMD) can be used.</p>
+                    
+                    <div class="callout-box info">
+                        <span class="callout-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                        </span>
+                        <div class="callout-text">
+                            <strong>Recommended Workflow inside VS Code:</strong>
+                            <p>Open VS Code, press <kbd style="background:rgba(255,255,255,0.1); padding:0.1rem 0.3rem; border-radius:3px;">Ctrl + `</kbd> (or go to Terminal > New Terminal), and select **PowerShell** as the shell profile.</p>
+                        </div>
+                    </div>
+
+                    <div class="card-actions">
+                        <button onclick="alert('To open PowerShell directly:\n1. Press Win + X on your keyboard.\n2. Select Windows PowerShell or Terminal from the menu.')" class="primary-action-btn" type="button">
+                            <span>Open PowerShell Guide</span>
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Step 2 -->
+                <section id="step-2" class="guide-card">
+                    <div class="guide-card-header">
+                        <div class="guide-card-title-group">
+                            <span class="step-badge">2</span>
+                            <h2>Clone the Project</h2>
+                        </div>
+                    </div>
+                    <p>Run the clone command in your terminal to download the project repository from GitHub into a local directory.</p>
+                    
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="terminal-dot red"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span>
+                            </div>
+                            <span class="terminal-title">powershell / cmd</span>
+                        </div>
+                        <div class="terminal-body">
+                            <pre class="terminal-code"><code id="code-clone">git clone https://github.com/starlite20/vividstudio.git</code></pre>
+                            <button class="copy-btn" data-copy-target="code-clone" title="Copy to clipboard" type="button">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Step 3 -->
+                <section id="step-3" class="guide-card">
+                    <div class="guide-card-header">
+                        <div class="guide-card-title-group">
+                            <span class="step-badge">3</span>
+                            <h2>Open the Project Folder</h2>
+                        </div>
+                    </div>
+                    <p>Navigate into the newly created folder where the repository files were cloned.</p>
+                    
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="terminal-dot red"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span>
+                            </div>
+                            <span class="terminal-title">powershell / cmd</span>
+                        </div>
+                        <div class="terminal-body">
+                            <pre class="terminal-code"><code id="code-cd">cd vividstudio</code></pre>
+                            <button class="copy-btn" data-copy-target="code-cd" title="Copy to clipboard" type="button">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Step 4 -->
+                <section id="step-4" class="guide-card">
+                    <div class="guide-card-header">
+                        <div class="guide-card-title-group">
+                            <span class="step-badge">4</span>
+                            <h2>Create Input and Output Folders</h2>
+                        </div>
+                    </div>
+                    <p>Generate directory structures where local video inputs are loaded and generated JSON outputs are written.</p>
+                    
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="terminal-dot red"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span>
+                            </div>
+                            <span class="terminal-title powershell-only">powershell</span>
+                            <span class="terminal-title cmd-only">cmd</span>
+                        </div>
+                        <div class="terminal-body">
+                            <!-- PowerShell command -->
+                            <pre class="terminal-code powershell-block"><code id="code-mkdir-ps">mkdir input, output -Force</code></pre>
+                            <!-- CMD command -->
+                            <pre class="terminal-code cmd-block"><code id="code-mkdir-cmd">mkdir input output</code></pre>
+                            
+                            <button class="copy-btn powershell-block" data-copy-target="code-mkdir-ps" title="Copy to clipboard" type="button">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                            </button>
+                            <button class="copy-btn cmd-block" data-copy-target="code-mkdir-cmd" title="Copy to clipboard" type="button">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Step 5 -->
+                <section id="step-5" class="guide-card">
+                    <div class="guide-card-header">
+                        <div class="guide-card-title-group">
+                            <span class="step-badge">5</span>
+                            <h2>Copy Sample Task File</h2>
+                        </div>
+                    </div>
+                    <p>Copy the sample task file provided in the repository into the input directory to act as the pipeline configuration payload.</p>
+                    
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="terminal-dot red"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span>
+                            </div>
+                            <span class="terminal-title">powershell / cmd</span>
+                        </div>
+                        <div class="terminal-body">
+                            <pre class="terminal-code"><code id="code-copy">copy examples\tasks.sample.json input\tasks.json</code></pre>
+                            <button class="copy-btn" data-copy-target="code-copy" title="Copy to clipboard" type="button">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Step 6 -->
+                <section id="step-6" class="guide-card">
+                    <div class="guide-card-header">
+                        <div class="guide-card-title-group">
+                            <span class="step-badge">6</span>
+                            <h2>Build Docker Image</h2>
+                        </div>
+                    </div>
+                    <p>Compile the application code and configure its environment locally using the project's docker configuration.</p>
+                    
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="terminal-dot red"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span>
+                            </div>
+                            <span class="terminal-title">powershell / cmd</span>
+                        </div>
+                        <div class="terminal-body">
+                            <pre class="terminal-code"><code id="code-build">docker build -t video-caption-agent:local .</code></pre>
+                            <button class="copy-btn" data-copy-target="code-build" title="Copy to clipboard" type="button">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="callout-box info">
+                        <span class="callout-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                        </span>
+                        <div class="callout-text">
+                            <strong>Note on Build Time:</strong>
+                            <p>Building the image resolves all package requirements. This process might take 3–5 minutes the first time depending on your machine speed.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Step 7 -->
+                <section id="step-7" class="guide-card">
+                    <div class="guide-card-header">
+                        <div class="guide-card-title-group">
+                            <span class="step-badge">7</span>
+                            <h2>Run the System</h2>
+                        </div>
+                    </div>
+                    <p>Execute the Docker container, mounting the local folders into it. This reads the task configuration from `input` and places results in `output`.</p>
+                    
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="terminal-dot red"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span>
+                            </div>
+                            <span class="terminal-title powershell-only">powershell</span>
+                            <span class="terminal-title cmd-only">cmd</span>
+                        </div>
+                        <div class="terminal-body">
+                            <!-- PowerShell command -->
+                            <pre class="terminal-code powershell-block"><code id="code-run-ps">docker run --rm `
+  -v "${PWD}\input:/input" `
+  -v "${PWD}\output:/output" `
+  video-caption-agent:local</code></pre>
+                            <!-- CMD command -->
+                            <pre class="terminal-code cmd-block"><code id="code-run-cmd">docker run --rm -v "%cd%\input:/input" -v "%cd%\output:/output" video-caption-agent:local</code></pre>
+                            
+                            <button class="copy-btn powershell-block" data-copy-target="code-run-ps" title="Copy to clipboard" type="button">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                            </button>
+                            <button class="copy-btn cmd-block" data-copy-target="code-run-cmd" title="Copy to clipboard" type="button">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Step 8 -->
+                <section id="step-8" class="guide-card">
+                    <div class="guide-card-header">
+                        <div class="guide-card-title-group">
+                            <span class="step-badge">8</span>
+                            <h2>View the Output</h2>
+                        </div>
+                    </div>
+                    <p>Read the generated contents in `results.json` to verify that the agent execution finished successfully.</p>
+                    
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="terminal-dot red"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span>
+                            </div>
+                            <span class="terminal-title powershell-only">powershell</span>
+                            <span class="terminal-title cmd-only">cmd</span>
+                        </div>
+                        <div class="terminal-body">
+                            <!-- PowerShell command -->
+                            <pre class="terminal-code powershell-block"><code id="code-view-ps">Get-Content .\output\results.json</code></pre>
+                            <!-- CMD command -->
+                            <pre class="terminal-code cmd-block"><code id="code-view-cmd">type output\results.json</code></pre>
+                            
+                            <button class="copy-btn powershell-block" data-copy-target="code-view-ps" title="Copy to clipboard" type="button">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                            </button>
+                            <button class="copy-btn cmd-block" data-copy-target="code-view-cmd" title="Copy to clipboard" type="button">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="card-actions">
+                        <button id="btn-view-mock-json" class="secondary-action-btn" type="button">
+                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            <span>Toggle Mock JSON Result</span>
+                        </button>
+                    </div>
+
+                    <!-- Toggleable Mock JSON block -->
+                    <div id="mock-json-drawer" class="output-mock">
+                        <div class="output-mock-header">
+                            <span class="output-mock-title">
+                                <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                results.json (Simulated Output)
+                            </span>
+                        </div>
+                        <pre class="output-mock-code"><code>{
+  "status": "success",
+  "video_url": "preset://preset-1",
+  "captions": {
+    "formal": "The presentation provides a highly technical breakdown...",
+    "sarcastic": "Oh great, another detailed flowchart for an API...",
+    "humorous_tech": "Compile once, debug forever. Here is how the loop...",
+    "humorous_non_tech": "A team of developers trying to explain code..."
+  }
+}</code></pre>
+                    </div>
+                </section>
+
+                <!-- Step 9 -->
+                <section id="step-9" class="guide-card">
+                    <div class="guide-card-header">
+                        <div class="guide-card-title-group">
+                            <span class="step-badge">9</span>
+                            <h2>Run the Frontend (Optional)</h2>
+                        </div>
+                    </div>
+                    <p>Start the local Python server backend to serve the application user interface locally in your browser.</p>
+                    
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="terminal-dot red"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span>
+                            </div>
+                            <span class="terminal-title">powershell / cmd</span>
+                        </div>
+                        <div class="terminal-body">
+                            <pre class="terminal-code"><code id="code-server">PYTHONPATH=src python -m video_caption_agent.server</code></pre>
+                            <button class="copy-btn" data-copy-target="code-server" title="Copy to clipboard" type="button">
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="callout-box info">
+                        <span class="callout-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                        </span>
+                        <div class="callout-text">
+                            <strong>Access URL:</strong>
+                            <p>Open your browser and navigate to <strong>http://localhost:8000</strong> to open the interface. (You can also open the file `frontend/index.html` directly in a browser to use the client sandbox).</p>
+                        </div>
+                    </div>
+
+                    <div class="card-actions">
+                        <a href="http://localhost:8000" target="_blank" rel="noreferrer" class="primary-action-btn">
+                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            <span>Open Localhost:8000</span>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Summary Card -->
+                <section id="summary" class="guide-card summary-card">
+                    <div class="guide-card-header">
+                        <div class="guide-card-title-group">
+                            <span class="step-badge" style="background: linear-gradient(135deg, var(--accent-green) 0%, var(--accent-cyan) 100%);">✦</span>
+                            <h2>Simple Summary</h2>
+                        </div>
+                    </div>
+                    <p>The fastest path to get up and running for a complete beginner:</p>
+                    
+                    <ul class="summary-step-list">
+                        <li class="summary-step-item">
+                            <span class="summary-step-number">1</span>
+                            <span class="summary-step-text">Open VS Code and launch terminal in <strong>PowerShell</strong> mode.</span>
+                        </li>
+                        <li class="summary-step-item">
+                            <span class="summary-step-number">2</span>
+                            <span class="summary-step-text">Clone repository: <code>git clone https://github.com/starlite20/vividstudio.git</code></span>
+                        </li>
+                        <li class="summary-step-item">
+                            <span class="summary-step-number">3</span>
+                            <span class="summary-step-text">Navigate into directory: <code>cd vividstudio</code>.</span>
+                        </li>
+                        <li class="summary-step-item">
+                            <span class="summary-step-number">4</span>
+                            <span class="summary-step-text">Run the setup commands in sequence to build and execute the docker stack.</span>
+                        </li>
+                        <li class="summary-step-item">
+                            <span class="summary-step-number">5</span>
+                            <span class="summary-step-text">Verify final outputs generated at <code>output/results.json</code>.</span>
+                        </li>
+                    </ul>
+                </section>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Floating Back to Top Button -->
+    <a href="#" class="bottom-nav-nav" aria-label="Back to Top">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+    </a>
+
+    <!-- Footer -->
+    <footer class="guide-footer">
+        <p>© 2026 VIVID STUDIO • WINDOWS RUNTIME SPECIFICATION</p>
+    </footer>
+
+    <!-- Interactive script -->
+    <script>
+        // Terminal toggling logic
+        const btnPs = document.getElementById('btn-toggle-powershell');
+        const btnCmd = document.getElementById('btn-toggle-cmd');
+        const body = document.body;
+
+        btnPs.addEventListener('click', () => {
+            body.classList.remove('use-cmd');
+            body.classList.add('use-powershell');
+            btnPs.classList.add('active');
+            btnPs.setAttribute('aria-selected', 'true');
+            btnCmd.classList.remove('active');
+            btnCmd.setAttribute('aria-selected', 'false');
+        });
+
+        btnCmd.addEventListener('click', () => {
+            body.classList.remove('use-powershell');
+            body.classList.add('use-cmd');
+            btnCmd.classList.add('active');
+            btnCmd.setAttribute('aria-selected', 'true');
+            btnPs.classList.remove('active');
+            btnPs.setAttribute('aria-selected', 'false');
+        });
+
+        // Copy commands logic
+        document.querySelectorAll('.copy-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const targetId = button.getAttribute('data-copy-target');
+                const codeEl = document.getElementById(targetId);
+                if (!codeEl) return;
+                
+                const text = codeEl.innerText.trim();
+                navigator.clipboard.writeText(text).then(() => {
+                    const originalHTML = button.innerHTML;
+                    button.classList.add('copied');
+                    button.innerHTML = `
+                        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Copied!</span>
+                    `;
+                    
+                    setTimeout(() => {
+                        button.classList.remove('copied');
+                        button.innerHTML = originalHTML;
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Could not copy text: ', err);
+                });
+            });
+        });
+
+        // Mock JSON Output Drawer Toggler
+        const mockBtn = document.getElementById('btn-view-mock-json');
+        const mockDrawer = document.getElementById('mock-json-drawer');
+        mockBtn.addEventListener('click', () => {
+            mockDrawer.classList.toggle('show');
+        });
+
+        // Scroll highlight sidebar logic
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.sidebar-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
