@@ -9,8 +9,8 @@
       "duration": "00:18",
       "description": "A creator moves from a rough idea to a polished, audience-ready story.",
       "narration": "A creator turns a rough idea into a polished piece of content, moving from planning to production and finally publishing.",
-      "video": "/assets/videos/preset-1.mp4",
-      "card_thumbnail": "/assets/presets/preset-1-card.png",
+      "video": "assets/videos/preset-1.mp4",
+      "card_thumbnail": "assets/presets/preset-1-card.png",
       "captions": {
         "English": {
           "formal": "A focused creative workflow transforms an initial concept into polished, audience-ready content.",
@@ -68,10 +68,10 @@
         }
       },
       "thumbnails": {
-        "formal": "/assets/thumbnails/sample-1-formal.png",
-        "sarcastic": "/assets/thumbnails/sample-1-sarcastic.png",
-        "humorous_tech": "/assets/thumbnails/sample-1-humorous_tech.png",
-        "humorous_non_tech": "/assets/thumbnails/sample-1-humorous_non_tech.png"
+        "formal": "assets/thumbnails/sample-1-formal.png",
+        "sarcastic": "assets/thumbnails/sample-1-sarcastic.png",
+        "humorous_tech": "assets/thumbnails/sample-1-humorous_tech.png",
+        "humorous_non_tech": "assets/thumbnails/sample-1-humorous_non_tech.png"
       }
     },
     {
@@ -81,8 +81,8 @@
       "duration": "00:22",
       "description": "A cinematic launch sequence introduces a new product through detail and drama.",
       "narration": "A new product is introduced through detail shots, a confident reveal, and a final moment designed to build excitement.",
-      "video": "/assets/videos/preset-2.mp4",
-      "card_thumbnail": "/assets/presets/preset-2-card.png",
+      "video": "assets/videos/preset-2.mp4",
+      "card_thumbnail": "assets/presets/preset-2-card.png",
       "captions": {
         "English": {
           "formal": "A carefully staged reveal presents the product’s design, purpose, and value with clarity and confidence.",
@@ -140,10 +140,10 @@
         }
       },
       "thumbnails": {
-        "formal": "/assets/thumbnails/sample-2-formal.png",
-        "sarcastic": "/assets/thumbnails/sample-2-sarcastic.png",
-        "humorous_tech": "/assets/thumbnails/sample-2-humorous_tech.png",
-        "humorous_non_tech": "/assets/thumbnails/sample-2-humorous_non_tech.png"
+        "formal": "assets/thumbnails/sample-2-formal.png",
+        "sarcastic": "assets/thumbnails/sample-2-sarcastic.png",
+        "humorous_tech": "assets/thumbnails/sample-2-humorous_tech.png",
+        "humorous_non_tech": "assets/thumbnails/sample-2-humorous_non_tech.png"
       }
     },
     {
@@ -153,8 +153,8 @@
       "duration": "00:27",
       "description": "A fast-moving journey captures open roads, discovery, and unfamiliar places.",
       "narration": "A fast-moving travel sequence captures open roads, new scenery, and the feeling of discovering something beyond the familiar.",
-      "video": "/assets/videos/preset-3.mp4",
-      "card_thumbnail": "/assets/presets/preset-3-card.png",
+      "video": "assets/videos/preset-3.mp4",
+      "card_thumbnail": "assets/presets/preset-3-card.png",
       "captions": {
         "English": {
           "formal": "A dynamic travel story captures movement, discovery, and the emotional value of exploring unfamiliar places.",
@@ -212,10 +212,10 @@
         }
       },
       "thumbnails": {
-        "formal": "/assets/thumbnails/sample-3-formal.png",
-        "sarcastic": "/assets/thumbnails/sample-3-sarcastic.png",
-        "humorous_tech": "/assets/thumbnails/sample-3-humorous_tech.png",
-        "humorous_non_tech": "/assets/thumbnails/sample-3-humorous_non_tech.png"
+        "formal": "assets/thumbnails/sample-3-formal.png",
+        "sarcastic": "assets/thumbnails/sample-3-sarcastic.png",
+        "humorous_tech": "assets/thumbnails/sample-3-humorous_tech.png",
+        "humorous_non_tech": "assets/thumbnails/sample-3-humorous_non_tech.png"
       }
     }
   ]
